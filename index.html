@@ -117,8 +117,8 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Login</a></li>
-                  <li><a class="dropdown-item" href="#">Signup</a></li>
+                  <li><a class="dropdown-item" href="#" id="openLogin">Login</a></li>
+                  <li><a class="dropdown-item" href="#" id="openSignup">Signup</a></li>
                 </ul>
               </div>
             </div>
@@ -386,6 +386,51 @@
     </div>
   </nav>
   <!-- ======End Bottom Bar====== -->
+     <!-- ======Start Login Modal====== -->
+<!-- Login Modal -->
+<div id="loginModal" class="modal login-modal">
+  <div class="modal-content login-content">
+    <span class="close-btn close-login">&times;</span>
+    <h2>Login</h2>
+    <form>
+      <label for="login-email">Email:</label>
+      <input type="email" id="login-email" placeholder="Enter your email" required>
+
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" placeholder="Enter your password" required>
+
+      <button type="submit" class="btn login-btn">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#"  id="switchToSignup">Sign up</a></p>
+  </div>
+</div>
+
+
+        <!-- ======End Login Modal====== -->
+           <!-- ======Start Sign up Modal====== -->
+<!-- Signup Modal -->
+<div id="signupModal" class="modal signup-modal">
+  <div class="modal-content signup-content">
+    <span class="close-btn close-signup">&times;</span>
+    <h2>Sign Up</h2>
+    <form>
+      <label for="signup-name">Full Name:</label>
+      <input type="text" id="signup-name" placeholder="Enter your name" required>
+
+      <label for="signup-email">Email:</label>
+      <input type="email" id="signup-email" placeholder="Enter your email" required>
+
+      <label for="signup-password">Password:</label>
+      <input type="password" id="signup-password" placeholder="Create a password" required>
+
+      <button type="submit" class="btn signup-btn">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+  </div>
+</div>
+
+
+              <!-- ======End Sign up Modal====== -->
 
   <!-- ======Start Hero Section====== -->
   <div class="container-fluid p-0">

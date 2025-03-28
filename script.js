@@ -190,3 +190,59 @@ function handleSearch(inputId, resultId, queryId) {
 // मोबाइल और वेब सर्च के लिए फंक्शन को कॉल करें
 handleSearch('mobile-search', 'mobile-results', 'mobile-query');
 handleSearch('web-search', 'web-results', 'web-query');
+
+//login modal
+// Login Modal
+const loginModal = document.getElementById("loginModal");
+const openLoginBtn = document.getElementById("openLogin");
+const closeLoginBtn = document.querySelector(".close-login");
+
+// Signup Modal
+const signupModal = document.getElementById("signupModal");
+const openSignupBtn = document.getElementById("openSignup");
+const closeSignupBtn = document.querySelector(".close-signup");
+
+// Switch Buttons
+const switchToSignupBtn = document.getElementById("switchToSignup");
+const switchToLoginBtn = document.getElementById("switchToLogin");
+
+// Open and Close Login Modal
+openLoginBtn.addEventListener("click", () => {
+  loginModal.style.display = "flex";
+});
+
+closeLoginBtn.addEventListener("click", () => {
+  loginModal.style.display = "none";
+});
+
+// Open and Close Signup Modal
+openSignupBtn.addEventListener("click", () => {
+  signupModal.style.display = "flex";
+});
+
+closeSignupBtn.addEventListener("click", () => {
+  signupModal.style.display = "none";
+});
+
+// Switch from Login to Signup
+switchToSignupBtn.addEventListener("click", () => {
+  loginModal.style.display = "none";
+  signupModal.style.display = "flex";
+});
+
+// Switch from Signup to Login
+switchToLoginBtn.addEventListener("click", () => {
+  signupModal.style.display = "none";
+  loginModal.style.display = "flex";
+});
+
+// Close modal when clicking outside
+window.addEventListener("click", (e) => {
+  if (e.target === loginModal) {
+    loginModal.style.display = "none";
+  }
+  if (e.target === signupModal) {
+    signupModal.style.display = "none";
+  }
+});
+
