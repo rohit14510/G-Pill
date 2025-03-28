@@ -162,7 +162,33 @@ var swiper = new Swiper(".shop_by_categories", {
       }
     }
   });
-
+ //Best-Seller-Product
+ var swiper = new Swiper(".Best-Seller-Product", {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,   /* Mobile */
+      spaceBetween: 10
+    },
+    768: {
+      slidesPerView: 3,   /* Tablet */
+      spaceBetween: 15
+    },
+    1024: {
+      slidesPerView: 4,   /* Desktop */
+      spaceBetween: 20
+    }
+  }
+});
   //search div 
   // मोबाइल और वेब दोनों के लिए फंक्शन
 function handleSearch(inputId, resultId, queryId) {
