@@ -1,3 +1,10 @@
+body a,
+body button {
+  color: #000;
+  outline: none !important;
+  text-decoration: none !important;
+  transition: all ease 0.5s;
+}
 .p-100 {
   padding: 80px 40px;
 }
@@ -501,5 +508,109 @@ nav {
   opacity: 0;  
   transform: scale(1.05);
 }
+.top-product-card-body{
+  text-align: start !important;
+}
 
 /* =====Top Rated Section End====== */
+/* ---Footer-Section-Start--- */
+
+.footer-section {
+  padding-top: 30px;
+  font-weight: 600;
+  background-color: #eee;
+}
+.f-box,
+.footer-section .map {
+  margin-top: 20px;
+}
+.f-box h4 {
+  margin-bottom: 20px;
+  color: #5a459c;
+  position: relative;
+  font-weight: 600;
+}
+.f-box p {
+  margin: 15px 0px;
+  font-size: 17px;
+}
+.f-box h4::after {
+  height: 3px;
+  width: 70px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  background-color: #5a459c;
+  content: "";
+}
+.f-box ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.f-box ul li {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin: 10px 0px;
+}
+.f-box ul li a span {
+  font-weight: 600;
+}
+.f-box ul li a:hover {
+  color: #5a459c;
+}
+.f-box ul li span {
+  flex: 1;
+}
+.f-box img {
+  width: 120px;
+}
+.f-box .social-link {
+  display: flex;
+  align-items: center;
+}
+.f-box .social-link li a,
+.f-box ul li > i {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+  transition: 0.5s;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: #fff;
+  color: #5a459c;
+  border-radius: 1px;
+}
+.f-box .social-link li a:hover,
+.f-box ul li > i:hover {
+  background-color: #5a459c;
+  color: #fff;
+  border-radius: 5px;
+}
+.footer-section .map {
+  height: 100%;
+  box-shadow: 0px 10px 20px 0px #1dbf7316;
+}
+.footer-section .map iframe {
+  height: 100%;
+  border-radius: 10px;
+}
+.footer-section .copy-right {
+  text-align: center;
+  padding: 10px;
+  z-index: 7;
+  color: #fff;
+  background-color: #5a459c;
+  margin-top: 20px;
+  position: relative;
+}
+.footer-section .copy-right p {
+  margin-bottom: 0;
+}
+.footer-section .copy-right p a {
+  color: #000;
+  font-weight: 600;
+}
+/* ---Footer-Section-End--- */
