@@ -26,16 +26,78 @@
       </div>
       <div class="col-6 col-md-6">
         <div class="text-center mb-3 mb-md-0">
-          <div class="header_input-container">
-            <input class="input-simple" type="text" placeholder="Search" />
-            <span class="search-icon">
+          <div class="header_input-container mt-4 position-relative">
+            <input class="input-simple searchInput" type="text" placeholder="Search" id="web-search" />
+            <span class="search-icon position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%)">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
-                <path fill="#838D99"
-                  d="M13.22 14.63a8 8 0 1 1 1.41-1.41l4.29 4.29a1 1 0 1 1-1.41 1.41l-4.29-4.29zm-.66-2.07a6 6 0 1 0-8.49-8.49 6 6 0 0 0 8.49 8.49z">
-                </path>
+                <path fill="#838D99" d="M13.22 14.63a8 8 0 1 1 1.41-1.41l4.29 4.29a1 1 0 1 1-1.41 1.41l-4.29-4.29zm-.66-2.07a6 6 0 1 0-8.49-8.49 6 6 0 0 0 8.49 8.49z"></path>
               </svg>
             </span>
+          
+            <!-- Desktop Search Results -->
+            <div class="search-section position-absolute w-100 bg-white shadow-sm rounded" id="web-results" style="display: none; z-index: 10;">
+              <div class="alert alert-light m-2">
+                <strong>Showing results for '<span class="text-success" id="web-query">mamrw</span>'</strong>
+              </div>
+              <div class="list-group">
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-lg-4">
+                      <div class="d-flex align-items-center">
+                        <img src="assets/product-17-1.jpg" alt="Product" class="rounded me-3" width="60" />
+                        <div>
+                          <h6 class="mb-1">Grocery Farm</h6>
+                          <p class="text-muted small">Mamra Almonds - 200 g</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="d-flex justify-content-between">
+                        <p class="mb-1 fw-bold">₹629.3</p>
+                        <p class="mb-1 fw-bold text-success">30% OFF</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="d-flex align-items-center justify-content-end">
+                        <input type="number" class="form-control form-control-sm w-50 me-2" value="1" min="1" />
+                        <button class="btn btn-outline-danger btn-sm">Add</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-lg-4">
+                      <div class="d-flex align-items-center">
+                        <img src="assets/product-17-1.jpg" alt="Product" class="rounded me-3" width="60" />
+                        <div>
+                          <h6 class="mb-1">Grocery Farm</h6>
+                          <p class="text-muted small">Mamra Almonds - 200 g</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="d-flex justify-content-between">
+                        <p class="mb-1 fw-bold">₹629.3</p>
+                        <p class="mb-1 fw-bold text-success">30% OFF</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="d-flex align-items-center justify-content-end">
+                        <input type="number" class="form-control form-control-sm w-50 me-2" value="1" min="1" />
+                        <button class="btn btn-outline-danger btn-sm">Add</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="text-center mt-3">
+                  <a href="#" class="btn btn-link text-danger fw-bold">View all search results</a>
+                </div>
+              </div>
+            </div>
           </div>
+          
         </div>
       </div>
       <div class="col-md-3 header_icons">
@@ -172,16 +234,77 @@
     <div class="row">
       <div class="col-8 mx-auto">
         <div class="text-center">
-          <div class="header_input-container mt-3">
-            <input class="input-simple" type="text" placeholder="Search" />
+          <div class="header_input-container mt-3 position-relative">
+            <input class="input-simple searchInput" type="text" placeholder="Search" id="mobile-search" />
             <span class="search-icon position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%)">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
-                <path fill="#838D99"
-                  d="M13.22 14.63a8 8 0 1 1 1.41-1.41l4.29 4.29a1 1 0 1 1-1.41 1.41l-4.29-4.29zm-.66-2.07a6 6 0 1 0-8.49-8.49 6 6 0 0 0 8.49 8.49z">
-                </path>
+                <path fill="#838D99" d="M13.22 14.63a8 8 0 1 1 1.41-1.41l4.29 4.29a1 1 0 1 1-1.41 1.41l-4.29-4.29zm-.66-2.07a6 6 0 1 0-8.49-8.49 6 6 0 0 0 8.49 8.49z"></path>
               </svg>
             </span>
+          
+            <!-- Mobile Search Results -->
+            <div class="search-section position-absolute w-100 bg-white shadow-sm rounded" id="mobile-results" style="display: none; z-index: 100000;">
+              <div class="alert alert-light m-2">
+                <strong>Showing results for '<span class="text-success" id="mobile-query">mamrw</span>'</strong>
+              </div>
+              <div class="list-group">
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-lg-4">
+                      <div class="d-flex align-items-center">
+                        <img src="assets/product-17-1.jpg" alt="Product" class="rounded me-3" width="60" />
+                        <div>
+                          <h6 class="mb-1">Grocery Farm</h6>
+                          <p class="text-muted small">Mamra Almonds - 200 g</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="d-flex justify-content-between">
+                        <p class="mb-1 fw-bold">₹629.3</p>
+                        <p class="mb-1 fw-bold text-success">30% OFF</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="d-flex align-items-center justify-content-end">
+                        <input type="number" class="form-control form-control-sm w-50 me-2" value="1" min="1" />
+                        <button class="btn btn-outline-danger btn-sm">Add</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-lg-4">
+                      <div class="d-flex align-items-center">
+                        <img src="assets/product-17-1.jpg" alt="Product" class="rounded me-3" width="60" />
+                        <div>
+                          <h6 class="mb-1">Grocery Farm</h6>
+                          <p class="text-muted small">Mamra Almonds - 200 g</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="d-flex justify-content-between">
+                        <p class="mb-1 fw-bold">₹629.3</p>
+                        <p class="mb-1 fw-bold text-success">30% OFF</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="d-flex align-items-center justify-content-end">
+                        <input type="number" class="form-control form-control-sm w-50 me-2" value="1" min="1" />
+                        <button class="btn btn-outline-danger btn-sm">Add</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center mt-3">
+                  <a href="#" class="btn btn-link text-danger fw-bold">View all search results</a>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -770,6 +893,76 @@
   </div>
 </div>
   <!-- ======End Best Seller Section====== -->
+     <!-- ======Start Product Search Section====== -->
+     <div class="container my-4 search-section" style="display: none;">
+      <div class="alert alert-light">
+          <strong>Showing results for '<span class="text-success">mamrw</span>'</strong>
+      </div>
+      <div class="list-group">
+          <div class="list-group-item">
+            <div class=" row align-items-center">
+              <div class="col-lg-4 ">
+                <div class="d-flex align-items-center">
+                  <div class="search-img-container">
+                    <img src="assets/product-17-1.jpg" alt="Product" class="rounded me-3">
+                   </div>
+                    <div>
+                        <h6 class="mb-1">Grocery Farm</h6>
+                        <p class="text-muted small">Mamra Almonds - 200 g</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+               <div class="d-flex justify-content-lg-between justify-content-around">
+                <p class="mb-1 fw-bold ">₹629.3 </p>
+                <p class="mb-1 fw-bold text-success">30% OFF</p>
+               </div>
+              </div>
+              <div class="col-lg-4">
+                
+                  <div class="d-flex align-items- justify-content-lg-end justify-content-center">
+                      <input type="number" class="form-control form-control-sm w-50 me-2" value="1" min="1">
+                      <button class="btn btn-outline-danger btn-sm">Add</button>
+                  </div>
+              </div>
+          </div>
+           </div>
+           <div class="list-group-item">
+            <div class=" row align-items-center">
+              <div class="col-lg-4 ">
+                <div class="d-flex align-items-center">
+                  <div class="search-img-container">
+                    <img src="assets/product-17-1.jpg" alt="Product" class="rounded me-3">
+                   </div>
+                    <div>
+                        <h6 class="mb-1">Grocery Farm</h6>
+                        <p class="text-muted small">Mamra Almonds - 200 g</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+               <div class="d-flex justify-content-lg-between justify-content-around">
+                <p class="mb-1 fw-bold ">₹629.3 </p>
+                <p class="mb-1 fw-bold text-success">30% OFF</p>
+               </div>
+              </div>
+              <div class="col-lg-4">
+                
+                  <div class="d-flex align-items- justify-content-lg-end justify-content-center">
+                      <input type="number" class="form-control form-control-sm w-50 me-2" value="1" min="1">
+                      <button class="btn btn-outline-danger btn-sm">Add</button>
+                  </div>
+              </div>
+          </div>
+           </div>
+          <div class="text-center mt-3">
+              <a href="#" class="btn btn-link text-danger fw-bold">View all search results</a>
+          </div>
+  
+      </div>
+  </div>
+  
+        <!-- ======End Product Search Section====== -->
       <!-- ===Footer-Section-Start=== -->
     
       <footer class="footer-section">

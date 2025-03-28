@@ -162,3 +162,31 @@ var swiper = new Swiper(".shop_by_categories", {
       }
     }
   });
+
+  //search div 
+  // मोबाइल और वेब दोनों के लिए फंक्शन
+function handleSearch(inputId, resultId, queryId) {
+  const input = document.getElementById(inputId);
+  const results = document.getElementById(resultId);
+  const query = document.getElementById(queryId);
+
+  input.addEventListener('input', () => {
+    const value = input.value.trim();
+    if (value !== '') {
+      query.textContent = value;
+      results.style.display = 'block';
+    } else {
+      results.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!input.contains(e.target) && !results.contains(e.target)) {
+      results.style.display = 'none';
+    }
+  });
+}
+
+// मोबाइल और वेब सर्च के लिए फंक्शन को कॉल करें
+handleSearch('mobile-search', 'mobile-results', 'mobile-query');
+handleSearch('web-search', 'web-results', 'web-query');

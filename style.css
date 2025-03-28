@@ -169,7 +169,7 @@ body button {
   inset: 0px auto auto 0px;
   margin: 0px;
   transform: translate3d(4px, 24.6667px, 0px);
-  top: 0rem !important;
+  top:-10px!important;
   left: -2rem !important;
   width: 250px;
 }
@@ -513,6 +513,24 @@ nav {
 }
 
 /* =====Top Rated Section End====== */
+/* =====Product Section start====== */
+.list-group-item {
+  transition: 0.3s;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.list-group-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.search-img-container img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+/* =====ProductSection End====== */
 /* ---Footer-Section-Start--- */
 
 .footer-section {
