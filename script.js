@@ -328,4 +328,10 @@ window.addEventListener("click", (e) => {
 
 
 
-// range 
+// page Details 
+function changeImage(element) {
+  document.getElementById('mainImage').src = element.src;
+  let thumbnails = document.querySelectorAll('.thumbnail-image-container img');
+  thumbnails.forEach(img => img.classList.remove('active'));
+  element.classList.add('active');
+} 
