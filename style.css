@@ -916,23 +916,52 @@ form input {
   border: none;
   background-color: transparent;
 }
-.Address-container-first {
+ .Address-container-first {
   padding: 10px;
-  background-color: rgba(237, 22, 144, 0.1);
+  background-color: white;
   color: black;
-  border: 1px dotted #ed1690;
+  border: 1px dotted #000;
 }
 .Address-container-Second {
   padding: 10px;
   background-color: white;
   color: black;
-  border: 1px dotted #ed1690;
+  border: 1px dotted #000;
 }
 .Address-delete-btn {
   color: #5a459c;
   border: none;
   background-color: transparent;
   font-weight: 600;
+}
+.add-selected {
+  padding: 10px;
+  background-color: rgba(237, 22, 144, 0.1);
+  color: black;
+  border: 1px dotted #ed1690;
+}
+
+.payment-method .method {
+  border: 2px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+.payment-method .selected {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px #0d6efd;
+}
+.form-control {
+  border-radius: 8px;
+}
+.btn-custom {
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+.cod-container, .upi-container {
+  display: none; /* पहले से हाइड रहेगा */
 }
 /* ---Checkout-Page-End--- */
 /* ---Product-Details-Page-Start--- */

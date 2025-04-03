@@ -335,3 +335,52 @@ function changeImage(element) {
   thumbnails.forEach(img => img.classList.remove('active'));
   element.classList.add('active');
 } 
+
+// Adress Select
+function selectAddress(selected) {
+  // सभी Address कंटेनर से selected क्लास हटाओ
+  document.querySelectorAll('.Address-container-first, .Address-container-Second').forEach(address => {
+      address.classList.remove('add-selected');
+  });
+
+  // जिस Address पर क्लिक हुआ उसे select करो
+  selected.classList.add('add-selected');
+}
+
+function deleteAddress(event, button) {
+  event.stopPropagation(); // Delete बटन पर क्लिक करने से Select event ट्रिगर न हो
+  let addressContainer = button.closest('.Address-container-first, .Address-container-Second');
+  if (addressContainer) {
+      addressContainer.remove(); // Address हटाएं
+  }
+}
+
+//payment card
+function selectMethod(selected, type) {
+  // सभी payment methods से 'selected' क्लास हटाओ
+  document.querySelectorAll('.method').forEach(method => {
+      method.classList.remove('selected');
+  });
+
+  // सिलेक्टेड method पर 'selected' क्लास लगाओ
+  selected.classList.add('selected');
+
+  // सभी फॉर्म्स को हाइड करो
+  document.querySelector('.credit-container').style.display = 'none';
+  document.querySelector('.cod-container').style.display = 'none';
+  document.querySelector('.upi-container').style.display = 'none';
+
+  // सिलेक्टेड payment method को दिखाओ
+  if (type === 'credit') {
+      document.querySelector('.credit-container').style.display = 'block';
+  } else if (type === 'cod') {
+      document.querySelector('.cod-container').style.display = 'block';
+  } else if (type === 'upi') {
+      document.querySelector('.upi-container').style.display = 'block';
+  }
+}
+
+// Default रूप से Credit Card Form दिखाएं
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector('.credit-container').style.display = 'block';
+});
