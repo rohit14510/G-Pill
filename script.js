@@ -267,7 +267,6 @@ function handleSearch(inputId, resultId, queryId) {
   });
 }
 
-// मोबाइल और वेब सर्च के लिए फंक्शन को कॉल करें
 handleSearch('mobile-search', 'mobile-results', 'mobile-query');
 handleSearch('web-search', 'web-results', 'web-query');
 
@@ -338,39 +337,29 @@ function changeImage(element) {
 
 // Adress Select
 function selectAddress(selected) {
-  // सभी Address कंटेनर से selected क्लास हटाओ
   document.querySelectorAll('.Address-container-first, .Address-container-Second').forEach(address => {
       address.classList.remove('add-selected');
   });
-
-  // जिस Address पर क्लिक हुआ उसे select करो
   selected.classList.add('add-selected');
 }
 
 function deleteAddress(event, button) {
-  event.stopPropagation(); // Delete बटन पर क्लिक करने से Select event ट्रिगर न हो
+  event.stopPropagation();
   let addressContainer = button.closest('.Address-container-first, .Address-container-Second');
   if (addressContainer) {
-      addressContainer.remove(); // Address हटाएं
+      addressContainer.remove();
   }
 }
 
 //payment card
 function selectMethod(selected, type) {
-  // सभी payment methods से 'selected' क्लास हटाओ
   document.querySelectorAll('.method').forEach(method => {
       method.classList.remove('selected');
   });
-
-  // सिलेक्टेड method पर 'selected' क्लास लगाओ
   selected.classList.add('selected');
-
-  // सभी फॉर्म्स को हाइड करो
   document.querySelector('.credit-container').style.display = 'none';
   document.querySelector('.cod-container').style.display = 'none';
   document.querySelector('.upi-container').style.display = 'none';
-
-  // सिलेक्टेड payment method को दिखाओ
   if (type === 'credit') {
       document.querySelector('.credit-container').style.display = 'block';
   } else if (type === 'cod') {
@@ -379,8 +368,6 @@ function selectMethod(selected, type) {
       document.querySelector('.upi-container').style.display = 'block';
   }
 }
-
-// Default रूप से Credit Card Form दिखाएं
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector('.credit-container').style.display = 'block';
 });
