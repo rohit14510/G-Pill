@@ -883,6 +883,7 @@ form input {
   line-height: 1.5;
   background-color: #fff;
   background-clip: padding-box;
+
 }
 .shop-cart-coupon .theme-btn {
   position: absolute;
@@ -1008,3 +1009,59 @@ form input {
   font-weight: bold;
 }
 /* ---Product-Details-Page-End--- */
+/* ---Register-Page-Start--- */
+
+.register-box {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.register-box h2 {
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #0d6efd;
+}
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+}
+.form-text a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+/* ---Register-Page-End--- */
+/* ---Login-Page-Start--- */
+.login-box {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #0d6efd;
+}
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+}
+.form-text a {
+  text-decoration: none;
+  color: #0d6efd;
+}
+/* ---Login-Page-End--- */
