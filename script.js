@@ -371,3 +371,23 @@ function selectMethod(selected, type) {
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector('.credit-container').style.display = 'block';
 });
+
+// Dashboard
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('show');
+}
+
+function showSection(event, sectionId) {
+  event.preventDefault();
+  const sections = document.querySelectorAll('.dashboard-section');
+  sections.forEach(section => section.classList.remove('active'));
+  document.getElementById(sectionId).classList.add('active');
+
+  const links = document.querySelectorAll('.dashboard-sidebar a');
+  links.forEach(link => link.classList.remove('active'));
+  event.target.classList.add('active');
+
+  if (window.innerWidth < 768) {
+    toggleSidebar();
+  }
+}

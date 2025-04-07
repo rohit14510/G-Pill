@@ -964,6 +964,10 @@ form input {
 .cod-container, .upi-container {
   display: none; /* पहले से हाइड रहेगा */
 }
+.input-lg {
+  height: 80px !important;
+}
+
 /* ---Checkout-Page-End--- */
 /* ---Product-Details-Page-Start--- */
 .product-image-container {
@@ -1033,7 +1037,7 @@ form input {
   border-color: #0d6efd;
 }
 .btn-primary {
-  width: 100%;
+ 
   padding: 10px;
 }
 /* ---Register-Page-End--- */
@@ -1054,3 +1058,65 @@ form input {
 
 
 /* ---Login-Page-End--- */
+/* ---Dashboard-Page-Start--- */
+.dashboard-sidebar {
+  height: 100vh;
+  background-color: #5a459c;
+  color: white;
+  position: fixed;
+  width: 250px;
+  transition: left 0.3s;
+  left: 0;
+}
+.dashboard-sidebar a {
+  color: white;
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.dashboard-sidebar a:hover, .dashboard-sidebar a.active {
+  background-color: #ed1690;
+}
+.dashboard-content {
+  margin-left: 250px;
+  padding: 20px;
+}
+.dashboard-navbar {
+  margin-left: 250px;
+  background-color: #ed1690;
+  font-size: 25px;
+  color: #fff;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    left: -250px;
+    z-index: 1000;
+  }
+  .dashboard-sidebar.show {
+    left: 0;
+  }
+  .dashboard-navbar,
+  .dashboard-content {
+    margin-left: 0;
+  }
+}
+.dashboard-menu-btn {
+  font-size: 24px;
+  cursor: pointer;
+}
+.dashboard-section {
+  display: none;
+}
+.dashboard-section.active {
+  display: block;
+}
+.update-profile-btn{
+ background-color: #5a459c !important;
+ color: #fff !important;
+
+}
+
+/* ---Dashboard-Page-End--- */
