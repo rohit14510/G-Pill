@@ -1303,6 +1303,20 @@ form input {
     font-size: 20px;
   }
 }
+.dashboard-search-input {
+  padding: 5px 16px;
+  border: 1px solid #5a459c;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.dashboard-search-input:focus {
+  border-color:rgba(237, 22, 144, .25);
+  box-shadow: 0 0 0 3px rgba(237, 22, 144, .25);
+}
+
 
 .profile-box {
   background-color: #fff;
