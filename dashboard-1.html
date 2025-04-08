@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPILL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="dashboard-sidebar" id="sidebar">
+  <div class="dashboard-profile text-center mb-4 position-relative">
+    <img src="assets/user.jpg" id="profilePic" class="rounded-circle border border-3 border-success"
+      style="width: 100px; height: 100px; object-fit: cover; cursor: pointer;" onclick="document.getElementById('uploadPic').click()" />
+
+    <!-- Hidden File Input -->
+    <input type="file" id="uploadPic" accept="image/*" style="display: none;" onchange="previewImage(event)" />
+
+    <h5 class="mt-2">Antoni Jonson</h5>
+    <p class="" style="font-size: 14px;">antoni@example.com</p>
+  </div>
+
+  <a href="#" class="dashboard-active" onclick="showSection('dashboard', this)"><i class="fa-solid fa-house"></i></i> Dashboard</a>
+  <a href="#" onclick="showSection('profile', this)"><i class="fa-solid fa-user"></i> My Profile</a>
+  <a href="#" onclick="showSection('orders', this)"><i class="fa-solid fa-box-open"></i> My Orders</a>
+  <a href="#" onclick="showSection('wishlist', this)"><i class="fa-solid fa-heart"></i> Wishlist</a>
+  <a href="#" onclick="showSection('Address', this)"><i class="fa-solid fa-address-book"></i> Address List</a>
+  <a href="#" onclick="showSection('logout', this)"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
+</div>
+
+<!-- Main -->
+<div class="dashboard-main">
+  <span class="dashboard-menu-btn d-md-none" onclick="toggleSidebar()">☰ Menu</span>
+
+  <!-- Dashboard Section -->
+  <div id="dashboard" class="dashboard-section dashboard-active">
+    <h4>Summary</h4>
+    <div class="dashboard-row dashboard-g-3 dashboard-mt-2 row g-3 mt-2">
+      <div class="dashboard-col dashboard-col-md-4 col-md-4">
+        <div class="dashboard-summary-card p-3">
+         <div>
+            <h1 class="fw-bold">50</h1>
+            <p class="fw-bold">Pending Orders</p>
+         </div>
+         <div class="dashboard-summary-icon-container">
+            <i class="fa-solid fa-table-list"></i>
+         </div>
+        </div>
+      </div>
+      <div class="dashboard-col dashboard-col-md-4 col-md-4">
+        <div class="dashboard-summary-card-2 p-3">
+            <div>
+               <h1 class="fw-bold">250</h1>
+               <p class="fw-bold">Completed Orders </p>
+            </div>
+            <div class="dashboard-summary-icon-container-2">
+              <i class="fa-solid fa-box"></i>
+            </div>
+           </div>
+      </div>
+    </div>
+    <div class="dashboard-orders-section mt-4">
+      <div class="dashboard-header">
+        <h2 class="dashboard-title">Recent Orders</h2>
+        <button class="dashboard-view-btn">View All Orders</button>
+      </div>
+  
+      <table class="dashboard-table">
+        <thead class="dashboard-thead">
+          <tr class="dashboard-row">
+            <th class="dashboard-th">#Order No</th>
+            <th class="dashboard-th">Purchased Date</th>
+            <th class="dashboard-th">Total</th>
+            <th class="dashboard-th">Status</th>
+            <th class="dashboard-th">Action</th>
+          </tr>
+        </thead>
+        <tbody class="dashboard-tbody">
+          <tr class="dashboard-row">
+            <td class="dashboard-td" data-label="Order No">#28VR5K59</td>
+            <td class="dashboard-td" data-label="Purchased Date">August 20, 2024</td>
+            <td class="dashboard-td" data-label="Total">₹ 3,650</td>
+            <td class="dashboard-td" data-label="Status">
+              <span class="dashboard-badge dashboard-pending">Pending</span>
+            </td>
+            <td class="dashboard-td" data-label="Action">
+              <button class="dashboard-action-btn">👁️</button>
+            </td>
+          </tr>
+  
+          <tr class="dashboard-row">
+            <td class="dashboard-td" data-label="Order No">#19XA4J33</td>
+            <td class="dashboard-td" data-label="Purchased Date">August 21, 2024</td>
+            <td class="dashboard-td" data-label="Total">₹ 2,850</td>
+            <td class="dashboard-td" data-label="Status">
+              <span class="dashboard-badge dashboard-processing">Processing</span>
+            </td>
+            <td class="dashboard-td" data-label="Action">
+              <button class="dashboard-action-btn">👁️</button>
+            </td>
+          </tr>
+  
+          <tr class="dashboard-row">
+            <td class="dashboard-td" data-label="Order No">#33PL9N88</td>
+            <td class="dashboard-td" data-label="Purchased Date">August 22, 2024</td>
+            <td class="dashboard-td" data-label="Total">₹ 4,120</td>
+            <td class="dashboard-td" data-label="Status">
+              <span class="dashboard-badge dashboard-completed">Completed</span>
+            </td>
+            <td class="dashboard-td" data-label="Action">
+              <button class="dashboard-action-btn">👁️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    
+     </div>
+
+  <!-- Profile Section -->
+  <div id="profile" class="dashboard-section">
+    <div class="container-fluid">
+      <div class="row justify-content-Start">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div class="profile-box">
+            <h2 class="profile-header">Profile Info</h2>
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-md-0">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 mb-md-0">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="col-md-6">
+                  <label for="mobile" class="form-label">Mobile Number</label>
+                  <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number">
+                </div>
+              </div>
+  
+              <div class="mb-4">
+                <label for="address" class="form-label">Address</label>
+                <textarea id="address" rows="3" class="form-control" placeholder="Enter your address"></textarea>
+              </div>
+  
+              <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div class="profile-box">
+            <h2 class="profile-header">Change Password</h2>
+            <form>
+              <div class="">
+                <label for="oldPassword" class="form-label">Old Password</label>
+                <input type="password" class="form-control" id="oldPassword" placeholder="Enter old password">
+              </div>
+    
+              <div class="">
+                <label for="newPassword" class="form-label">New Password</label>
+                <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+              </div>
+    
+              <div class="mb-4">
+                <label for="confirmPassword" class="form-label">Re-type New Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Re-type new password">
+              </div>
+    
+              <button type="submit" class="save-btn">Change Password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Orders Section -->
+  <div id="orders" class="dashboard-section">
+  
+    <div class="dashboard-orders-section mt-4">
+        <div class="">
+          <h2 class="dashboard-title mb-2">My Orders List</h2>
+          <div class="dashboard-controls">
+            <input type="text" id="searchInput" class="dashboard-search mb-2" placeholder="Search Order No">
+            <select id="statusFilter" class="dashboard-select mb-2">
+              <option value="all">All</option>
+              <option value="Pending">Pending</option>
+              <option value="Processing">Processing</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+        </div>
+        <table class="dashboard-table">
+          <thead class="dashboard-thead">
+            <tr class="dashboard-row">
+              <th class="dashboard-th">#Order No</th>
+              <th class="dashboard-th">Purchased Date</th>
+              <th class="dashboard-th">Total</th>
+              <th class="dashboard-th">Status</th>
+              <th class="dashboard-th">Action</th>
+            </tr>
+          </thead>
+          <tbody class="dashboard-tbody">
+            <tr class="dashboard-row">
+              <td class="dashboard-td" data-label="Order No">#28VR5K59</td>
+              <td class="dashboard-td" data-label="Purchased Date">August 20, 2024</td>
+              <td class="dashboard-td" data-label="Total">₹ 3,650</td>
+              <td class="dashboard-td" data-label="Status">
+                <span class="dashboard-badge dashboard-pending">Pending</span>
+              </td>
+              <td class="dashboard-td" data-label="Action">
+                <button class="dashboard-action-btn">👁️</button>
+              </td>
+            </tr>
+    
+            <tr class="dashboard-row">
+              <td class="dashboard-td" data-label="Order No">#19XA4J33</td>
+              <td class="dashboard-td" data-label="Purchased Date">August 21, 2024</td>
+              <td class="dashboard-td" data-label="Total">₹ 2,850</td>
+              <td class="dashboard-td" data-label="Status">
+                <span class="dashboard-badge dashboard-processing">Processing</span>
+              </td>
+              <td class="dashboard-td" data-label="Action">
+                <button class="dashboard-action-btn">👁️</button>
+              </td>
+            </tr>
+    
+            <tr class="dashboard-row">
+              <td class="dashboard-td" data-label="Order No">#33PL9N88</td>
+              <td class="dashboard-td" data-label="Purchased Date">August 22, 2024</td>
+              <td class="dashboard-td" data-label="Total">₹ 4,120</td>
+              <td class="dashboard-td" data-label="Status">
+                <span class="dashboard-badge dashboard-completed">Completed</span>
+              </td>
+              <td class="dashboard-td" data-label="Action">
+                <button class="dashboard-action-btn">👁️</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+  </div>
+
+  <!-- Wishlist Section -->
+  <div id="wishlist" class="dashboard-section">
+    <div class="row mt-3 g-3">
+        <div class="col-md-4">
+          <div class="top-product-card p-3 shadow-sm">
+            <a href="Product.html" class="text-decoration-none">
+              <div class="position-relative product-card-container">
+                <img src="assets/product-17-1.jpg" class="card-img-top" alt="Vitamin K2">
+                <img src="assets/product-18-2.jpg" class="card-img-bottom" alt="Vitamin">
+
+                <a  class="btn wishlist-icon-container position-absolute top-0 end-0 m-2 rounded-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </a >
+              </div>
+           
+              <div class="top-product-card-body mb-2">
+                <p class="text-secondary small text-capitalize">Diabetes, Health Conditions</p>
+                <h5 class="card-title text-capitalize text-dark">Waterpik irrigador dental</h5>
+
+                <!-- Rating -->
+                <div class="d-flex align-items-center mb-2">
+                  <span class="text-warning">★★★★☆</span>
+                  <span class="ms-2">(4.0)</span>
+                </div>
+
+                <p class="card-text fw-bold">
+                  <span style="text-decoration: line-through; color: gray;">₹123.40</span>
+                  <span style="color: red; font-weight: bold; margin-left: 8px;">₹99.00</span>
+                </p>
+          
+          
+          </div>
+        </a>
+          <!-- Add to Cart a  -->
+          <a class="btn btn-primary w-100" href="Cart.html">
+            <i class="bi bi-cart-plus"></i> ADD TO CART
+          </a>
+        </div>
+        </div>
+        <div class="col-md-4">
+          <div class="top-product-card p-3 shadow-sm">
+            <a href="Product.html" class="text-decoration-none">
+              <div class="position-relative product-card-container">
+                <img src="assets/product-17-1.jpg" class="card-img-top" alt="Vitamin K2">
+                <img src="assets/product-18-2.jpg" class="card-img-bottom" alt="Vitamin">
+
+                <a  class="btn wishlist-icon-container position-absolute top-0 end-0 m-2 rounded-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </a >
+              </div>
+           
+              <div class="top-product-card-body mb-2">
+                <p class="text-secondary small text-capitalize">Diabetes, Health Conditions</p>
+                <h5 class="card-title text-capitalize text-dark">Waterpik irrigador dental</h5>
+
+                <!-- Rating -->
+                <div class="d-flex align-items-center mb-2">
+                  <span class="text-warning">★★★★☆</span>
+                  <span class="ms-2">(4.0)</span>
+                </div>
+
+                <p class="card-text fw-bold">
+                  <span style="text-decoration: line-through; color: gray;">₹123.40</span>
+                  <span style="color: red; font-weight: bold; margin-left: 8px;">₹99.00</span>
+                </p>
+          
+          
+          </div>
+        </a>
+          <!-- Add to Cart a  -->
+          <a class="btn btn-primary w-100" href="Cart.html">
+            <i class="bi bi-cart-plus"></i> ADD TO CART
+          </a>
+        </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Address Section -->
+  <div id="Address" class="dashboard-section">
+    <div class="dashboard-address-section container">
+      <div class="address-header d-flex justify-content-between align-items-center mb-3">
+        <h2 class="address-title">Address List</h2>
+        <button class="add-address-btn">
+          <i class="fas fa-plus-circle"></i> Add Address
+        </button>
+      </div>
+    
+      <div class="row g-3">
+        <!-- Address Card Start -->
+        <div class="col-12 col-md-6">
+          <div class="address-card p-3 border rounded shadow-sm">
+            <div><strong>Name:</strong> Antoni</div>
+            <div><strong>Address:</strong> 25/B Milford Road, New York</div>
+            <div><strong>Email:</strong> antoni@example.com</div>
+            <div><strong>Phone:</strong> (+02) 123 4687 456</div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="edit-btn btn btn-sm btn-primary"><i class="fas fa-pen"></i></button>
+              <button class="delete-btn btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+        <!-- Address Card End -->
+    
+        <!-- Duplicate Card Example -->
+        <div class="col-12 col-md-6">
+          <div class="address-card p-3 border rounded shadow-sm">
+            <div><strong>Name:</strong> Antoni</div>
+            <div><strong>Address:</strong> 25/B Milford Road, New York</div>
+            <div><strong>Email:</strong> antoni@example.com</div>
+            <div><strong>Phone:</strong> (+02) 123 4687 456</div>
+            <div class="mt-2 d-flex gap-2">
+              <button class="edit-btn btn btn-sm btn-primary"><i class="fas fa-pen"></i></button>
+              <button class="delete-btn btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+
+ <!-- Logout Section -->
+  <div id="logout" class="dashboard-section">
+    <h2>Logout</h2>
+    <p>You have been logged out successfully. Redirecting...</p>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+
+</html>

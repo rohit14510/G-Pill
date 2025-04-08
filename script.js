@@ -374,20 +374,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Dashboard
 function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('show');
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('dashboard-show');
+
+  // Agar sidebar open ho gaya hai, to click outside se band karne wala listener lagao
+  if (sidebar.classList.contains('dashboard-show')) {
+    // Thoda delay dena zaroori hai taki sidebar pe click ko avoid kare
+    setTimeout(() => {
+      document.addEventListener('click', handleOutsideClick);
+    }, 0);
+  } else {
+    document.removeEventListener('click', handleOutsideClick);
+  }
 }
 
-function showSection(event, sectionId) {
-  event.preventDefault();
-  const sections = document.querySelectorAll('.dashboard-section');
-  sections.forEach(section => section.classList.remove('active'));
-  document.getElementById(sectionId).classList.add('active');
+function handleOutsideClick(e) {
+  const sidebar = document.getElementById('sidebar');
+  const toggleBtn = document.getElementById('menuToggle'); // menu button ka ID agar hai to use
 
-  const links = document.querySelectorAll('.dashboard-sidebar a');
-  links.forEach(link => link.classList.remove('active'));
-  event.target.classList.add('active');
+  // Agar click sidebar ya toggle button ke bahar hua to sidebar band karo
+  if (!sidebar.contains(e.target) && (!toggleBtn || !toggleBtn.contains(e.target))) {
+    sidebar.classList.remove('dashboard-show');
+    document.removeEventListener('click', handleOutsideClick);
+  }
+}
+
+function showSection(id, link) {
+  const sections = document.querySelectorAll('.dashboard-section');
+  sections.forEach(sec => sec.classList.remove('dashboard-active'));
+
+  document.getElementById(id).classList.add('dashboard-active');
+
+  const sidebarLinks = document.querySelectorAll('.dashboard-sidebar a');
+  sidebarLinks.forEach(a => a.classList.remove('dashboard-active'));
+  link.classList.add('dashboard-active');
 
   if (window.innerWidth < 768) {
     toggleSidebar();
   }
 }
+
+function previewImage(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById('profilePic').src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+
+// order filter
+
